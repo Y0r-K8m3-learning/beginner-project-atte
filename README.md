@@ -35,6 +35,5 @@
 - FortifyServiceProvider自体は通っています
 FortifyServiceProvider.php dd関数をセット
 ![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/6f3faeae-dd56-468d-a5b5-94b40d991f26)
-
-![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/c729bb6b-54e8-4338-8b3d-766c4fa2c2b5)
+![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/684a9214-3d64-43e3-88f8-8cdb56a495ef)
 
