@@ -1,4 +1,4 @@
-# beginner-project-atte(初級模擬案件)　!実装中!
+# beginner-project-atte(初級模擬案件)　<実装中>
 
 ## 環境構築
 ### Dockerのビルドからマイグレーション、シーディングまでを記述する
@@ -31,3 +31,10 @@
   
 ## 発生しているエラー
 ![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/e6f9c7c2-114b-4965-a2a5-7c1d116f2f27)
+
+- FortifyServiceProvider自体は通っています
+FortifyServiceProvider.php dd関数をセット
+![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/6f3faeae-dd56-468d-a5b5-94b40d991f26)
+
+![image](https://github.com/Y0r-K8m3-learning/beginner-project-atte/assets/171590806/c729bb6b-54e8-4338-8b3d-766c4fa2c2b5)
+
