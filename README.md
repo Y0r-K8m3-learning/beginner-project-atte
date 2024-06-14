@@ -1,9 +1,9 @@
-# beginner-project-atte
+# beginner-project-atte(初級模擬案件)　!実装中!
 
 ## 環境構築
 ### Dockerのビルドからマイグレーション、シーディングまでを記述する
 -Dockerビルド
-  1. `git clone `
+  1. `git clone https://github.com/Y0r-K8m3-learning/beginner-project-atte.git`
   2. `cd kakunin-test-fashionablylate`
   3. `docker-compose up -d --build`
  
