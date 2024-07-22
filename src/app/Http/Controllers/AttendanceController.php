@@ -16,9 +16,6 @@ class AttendanceController extends Controller
 
     public function search(Request $request)
     {
-
-
-
         //押下ボタン判定
         if ($request->has("prev_date")) {
 
@@ -61,6 +58,7 @@ class AttendanceController extends Controller
             $total_break_time = gmdate('H:i:s', $total_break_time);
             $sumdata[] = [
                 'name' => $user_name,
+                'work_date' => $attendance->work_date,
                 'work_start' => $attendance->start_time,
                 'work_end' => $attendance->end_time,
                 'work_total_time' => $total_work_time,

@@ -22,23 +22,24 @@
           <ul class="header-nav">
             @if (Auth::check())
             <li class="header-nav__item">
+              <a href="/attendance"><button type=" button" class="header-nav__button">ホーム</button></a>
+            </li>
+            <li class="header-nav__item">
+              <a href="/search/user"><button type=" button" class="header-nav__button">ユーザ一覧</button></a>
+            </li>
+            <li class="header-nav__item">
+              <a href="/search"><button type=" button" class="header-nav__button">日付一覧</button></a>
+            </li>
+            <li class="header-nav__item">
               <form class="form-logout" action="/logout" method="post">
                 @csrf
                 <button class="header-nav__button">ログアウト</button>
               </form>
             </li>
-
-
-            @elseif (Request::is('register'))
-            <li>
-              <a href="/login"><button type=" button" class="header-nav__button">login</button></a>
-            </li>
-            @elseif (Request::is('login'))
-            <li>
-              <a class="" href="/register"> <button type="button" class="header-nav__button">register</button></a>
-            </li>
-
             @endif
+
+
+
 
           </ul>
         </nav>

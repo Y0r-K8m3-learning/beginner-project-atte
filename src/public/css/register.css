@@ -65,12 +65,12 @@
 }
 
 .form__button-submit {
-  width: 30%;
   height: 30px;
+  width:70%;
   margin-bottom: 20px;
   border: none;
   border-radius: 3px;
-  background: #4b442a;
+  background: #2067eb;
   color: #fff;
   cursor: pointer;
 }
