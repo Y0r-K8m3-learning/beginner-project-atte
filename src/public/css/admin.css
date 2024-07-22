@@ -139,7 +139,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .search-form__button-submit {
 
-  padding: 10px;
+  padding: 20px;
   width: 80px;
   height: 40px;
   border: none;
@@ -153,7 +153,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   margin-left: 10px;
   padding: 10px;
-  width: 80px;
+  width: 90px;
   height: 40px;
   border: none;
   border-radius: 3px;
@@ -183,9 +183,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom: 1px solid #ddd;
 }
 
+.content__heading{
+  text-align: center;
+}
 .search-table__header {
-  padding: 12px;
-  width: 20%;
+  padding: 13px;
+  width: 25%;
   height: 20px;
   font-weight: bold;
   background: #835b38b5;
@@ -193,8 +196,70 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-
 .search-table__item {
   padding: 8px;
   color: #9a714e;
+}
+
+.admin__table{
+  margin-top: 16px;
+  width: 80%;
+  text-align: center;
+   margin: 0 auto;
+   border-collapse: collapse;
+}
+.admin__row{
+  padding-left: 20px;
+  text-align: center;
+}
+
+
+
+.admin__row, .admin__data {
+            padding: 10px;
+            border-top: 1px solid #000; /* 上部の罫線 */
+            border-bottom: 1px solid #000; /* 下部の罫線 */
+  height: 55px;
+
+        }
+th:first-child, td:first-child {
+            border-left: none; /* 左の罫線を非表示 */
+        }
+th:last-child, td:last-child {
+            border-right: none; /* 右の罫線を非表示 */
+}
+
+.date-switcher{
+text-align: center;
+}
+
+.search_date {
+  outline: none;
+  margin: 5px 0;
+  padding: 10px;
+  width: 20%;
+  background-color: #d7d3c96a;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+
+.date-switcher-inner {
+            display: flex;
+            align-items: center;
+             justify-content: center;
+            margin: auto 0;
+            text-align: center;
+}
+
+.search-form-subcontent__pagenation{
+  display: flex;
+  justify-content: center;
+}
+
+.date-switcher__button{
+  margin:0 20px ;
 }

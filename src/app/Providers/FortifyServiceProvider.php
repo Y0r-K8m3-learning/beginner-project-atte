@@ -13,6 +13,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LogoutResponse;
+
 use Laravel\Fortify\Contracts\LoginResponse;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -22,6 +23,15 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->singleton(CreateNewUser::class);
+
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse
+        {
+            public function toResponse($request)
+            {
+                return redirect('/');
+            }
+        });
     }
     /**
      * Bootstrap any application services.
@@ -34,6 +44,12 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::registerView(function () {
             return view('auth.register');
+        });
+
+        Fortify::createUsersUsing(CreateNewUser::class);
+
+        Fortify::verifyEmailView(function () {
+            return view('auth.verify-email');
         });
 
         RateLimiter::for('login', function (Request $request) {
