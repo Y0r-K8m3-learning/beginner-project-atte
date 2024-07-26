@@ -2,7 +2,7 @@
 
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{ asset('css/search.css')}}">
 <link rel="stylesheet" href="{{ asset('css/paginate.css') }}">
 
 @endsection
@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="admin">
+<div class="search__content">
     <form method="GET" action="/search">
         @csrf
         <div class="date-switcher">
@@ -26,23 +26,23 @@
             </div>
         </div>
     </form>
-    <div class="admin__inner">
-        <table class="admin__table">
-            <tr class="admin__header-row admin__row">
-                <th class="admin__label">名前</th>
-                <th class="admin__label">勤務開始</th>
-                <th class="admin__label">勤務終了</th>
-                <th class="admin__label">休憩時間</th>
-                <th class="admin__label">勤務時間</th>
-                <th class="admin__label"></th>
+    <div class="search__inner">
+        <table class="search__table">
+            <tr class="search__header-row search__row">
+                <th class="search__label">名前</th>
+                <th class="search__label">勤務開始</th>
+                <th class="search__label">勤務終了</th>
+                <th class="search__label">休憩時間</th>
+                <th class="search__label">勤務時間</th>
+                <th class="search__label"></th>
             </tr>
             @foreach($sumdata as $data )
-            <tr class="admin__row">
-                <td class="admin__data">{{$data['name']}}</td>
-                <td class="admin__data">{{$data['work_start']}}</td>
-                <td class="admin__data">{{$data['work_end']}}</td>
-                <td class="admin__data">{{$data['break_total_time']}}</td>
-                <td class="admin__data">{{$data['work_total_time']}}</td>
+            <tr class="search__row">
+                <td class="search__data">{{$data['name']}}</td>
+                <td class="search__data">{{$data['work_start']}}</td>
+                <td class="search__data">{{$data['work_end']}}</td>
+                <td class="search__data">{{$data['break_total_time']}}</td>
+                <td class="search__data">{{$data['work_total_time']}}</td>
             </tr>
             @endforeach
         </table>

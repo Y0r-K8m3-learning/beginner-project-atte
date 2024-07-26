@@ -33,15 +33,12 @@ class UserInfoController extends Controller
     public function attendance(Request $request)
     {
 
-        $user_id = $request['id'];
+        $user_id = $request['user_id'];
         $user_name = $request['user_name'];
         $sumdata = $this->attendanceService->getAttendanceSummaryFromUser($user_id);
-
         return view(
             'search-user',
-            compact('sumdata', 'sumdata'),
-            compact('user_name', 'user_name'),
-
+            compact('sumdata', 'user_name', 'user_id')
         );
     }
 }

@@ -1,20 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\UserInfoController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 
 
 Route::middleware(['verified', 'auth'])->group(function () {
 
     Route::get('/', [AttendanceController::class, 'index']);
-    Route::get('/attendance', [AttendanceController::class, 'index']);
+    Route::get(
+        '/attendance',
+        [AttendanceController::class, 'index']
+    );
+    Route::post('/attendance', [AttendanceController::class, 'attendanceLogic']);
 });
 
 
@@ -23,10 +24,10 @@ Route::get('/search', [AttendanceController::class, 'search']);
 Route::get('/login', function () {
     return view('auth.login');
 });
-Route::get('/search/user/attendance', function () {
-    return view('search-user');
-});
+
+
 Route::get('/search/user', [UserInfoController::class, 'index']);
+
 Route::get('/search/user/attendance', [UserInfoController::class, 'attendance']);
 
 

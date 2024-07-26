@@ -13,11 +13,10 @@
 }
 
 .login-form__heading {
-  padding-top: 10px;
+  padding-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  color: #838383;
 
 }
 
@@ -71,7 +70,6 @@
 .form__button-submit {
   height: 30px;
   width: 100%;
-
   margin-bottom: 20px;
   border: none;
   border-radius: 3px;

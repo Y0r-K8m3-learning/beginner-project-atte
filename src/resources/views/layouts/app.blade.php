@@ -25,11 +25,12 @@
               <a href="/attendance"><button type=" button" class="header-nav__button">ホーム</button></a>
             </li>
             <li class="header-nav__item">
-              <a href="/search/user"><button type=" button" class="header-nav__button">ユーザ一覧</button></a>
-            </li>
-            <li class="header-nav__item">
               <a href="/search"><button type=" button" class="header-nav__button">日付一覧</button></a>
             </li>
+            <li class="header-nav__item">
+              <a href="/search/user"><button type=" button" class="header-nav__button">ユーザ一覧</button></a>
+            </li>
+
             <li class="header-nav__item">
               <form class="form-logout" action="/logout" method="post">
                 @csrf
@@ -37,10 +38,6 @@
               </form>
             </li>
             @endif
-
-
-
-
           </ul>
         </nav>
       </div>

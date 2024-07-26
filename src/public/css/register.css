@@ -17,17 +17,13 @@
   margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  color: #838383;
 }
 
 .form {
   padding: 20px;
   margin: 0 auto;
   width: 70%;
-  height: 60vh;
   text-align: center;
-  background-color: #fff;
-  border: 1px solid #f5d88f40;
   border-radius:5px ;
 }
 
@@ -53,11 +49,10 @@
   padding: 10px;
   width: 100%;
   height: 40px;
-  border: none;
-  border-radius: 3px;
-  background-color: #d7d3c96a;
-
+  border-radius: 1px;
+background-color: transparent;
   appearance: none;
+  border: 1px solid;
 }
 
 .form__button {
@@ -67,7 +62,6 @@
 .form__button-submit {
   height: 30px;
   width:70%;
-  margin-bottom: 20px;
   border: none;
   border-radius: 3px;
   background: #2067eb;
@@ -76,6 +70,5 @@
 }
 
 .login__link {
-  margin-top: 20px;
   text-align: center;
 }
