@@ -1,6 +1,6 @@
 
-.admin__content{
-   margin: 0 auto;
+.search__content{
+  margin: 0 auto;
   height: 100%;
   max-width: 1230px;
 
@@ -157,7 +157,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 40px;
   border: none;
   border-radius: 3px;
-  background: #cb7c4b69;
   color: #fff;
   cursor: pointer;
 }
@@ -198,24 +197,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .search-table__item {
   padding: 8px;
-  color: #9a714e;
 }
 
-.admin__table{
+.search__table{
   margin-top: 16px;
-  width: 80%;
+  width: 100%;
   text-align: center;
    margin: 0 auto;
    border-collapse: collapse;
 }
-.admin__row{
+
+.search__row{
   padding-left: 20px;
   text-align: center;
 }
 
-
-
-.admin__row, .admin__data {
+.search__row, .search__data {
             padding: 10px;
             border-top: 1px solid #000; /* 上部の罫線 */
             border-bottom: 1px solid #000; /* 下部の罫線 */
@@ -238,7 +235,7 @@ text-align: center;
   margin: 5px 0;
   padding: 10px;
   width: 20%;
-  background-color: #d7d3c96a;
+  background-color: transparent;
   border: none;
   text-align: center;
   font-weight: bold;
@@ -262,4 +259,7 @@ text-align: center;
 
 .date-switcher__button{
   margin:0 20px ;
+  color: #0080ff;
+  border: 1px solid #0080ff;
+  font-weight: bold;
 }

@@ -10,7 +10,7 @@
 </div>
 <form action="/attendance" method="post">
     @csrf
-    <p>{{Auth::user()['name']}}さんお疲れ様です！</p>
+    <p class = "attendance_user">{{Auth::user()['name']}}さんお疲れ様です！</p>
     <input type="text" name="user_id" value="{{Auth::user()['id']}}" hidden>
     <div class="attendance__content">
         <div class="attendance__panel">

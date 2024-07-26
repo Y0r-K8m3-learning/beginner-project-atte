@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 
 class AttendanceController extends Controller
 {
-
+    //
     public function search(Request $request)
     {
         //押下ボタン判定
@@ -78,6 +78,7 @@ class AttendanceController extends Controller
             compact('search_date', 'search_date')
         );
     }
+
     public function index(Request $request)
     {
 
@@ -112,15 +113,11 @@ class AttendanceController extends Controller
                 'break_end' => true,
             ];
         }
-
-
-
-
         return view('attendance', compact('readonly_status'));
     }
 
     //押下ボタン判定
-    public function AttendanceLogic(Request $request)
+    public function attendanceLogic(Request $request)
     {
         if ($request->has('start')) {
             return $this->attendanceStart($request);
