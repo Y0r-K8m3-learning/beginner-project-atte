@@ -1,6 +1,8 @@
 # beginner-project-atte(初級模擬案件)　<実装中>
+#アプリケーションの説明
+勤怠管理アプリ
 
-## 環境構築
+## 作成した目的
 ### Dockerのビルドからマイグレーション、シーディングまでを記述する
 -Dockerビルド
   1. `git clone https://github.com/Y0r-K8m3-learning/beginner-project-atte.git`
