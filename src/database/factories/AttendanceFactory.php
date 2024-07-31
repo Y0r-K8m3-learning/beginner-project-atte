@@ -19,7 +19,7 @@ class AttendanceFactory extends Factory
      */
     public function definition(): array
     {
-        $startDate = Carbon::today()->addDays(rand(0, 10));
+        $startDate = Carbon::today()->addDays(rand(-10, 10));
         // 9:00から17:00の間のランダムな時刻を生成
         $startTime = Carbon::createFromTime(rand(9, 16), rand(0, 59), rand(0, 59));
         $endTime = (clone $startTime)->addMinutes(rand(30, 480));;

@@ -5,6 +5,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\UserInfoController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 
 
 
@@ -18,6 +19,7 @@ Route::middleware(['verified', 'auth'])->group(function () {
     Route::post('/attendance', [AttendanceController::class, 'attendanceLogic']);
 });
 
+Route::post('/register', [AuthController::class, 'store']);
 
 Route::get('/search', [AttendanceController::class, 'search']);
 

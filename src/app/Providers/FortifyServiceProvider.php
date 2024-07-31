@@ -13,6 +13,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Http\Requests\LoginRequest as FortifyLoginRequest;
+use App\Http\Requests\LoginRequest;
 
 use Laravel\Fortify\Contracts\LoginResponse;
 
@@ -42,11 +44,12 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
 
+        Fortify::createUsersUsing(CreateNewUser::class);
+
         Fortify::registerView(function () {
             return view('auth.register');
         });
 
-        Fortify::createUsersUsing(CreateNewUser::class);
 
         Fortify::verifyEmailView(function () {
             return view('auth.verify-email');
@@ -57,5 +60,7 @@ class FortifyServiceProvider extends ServiceProvider
 
             return Limit::perMinute(10)->by($email . $request->ip());
         });
+
+        $this->app->bind(FortifyLoginRequest::class, LoginRequest::class);
     }
 }
