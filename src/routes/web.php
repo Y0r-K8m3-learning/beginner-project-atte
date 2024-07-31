@@ -17,28 +17,21 @@ Route::middleware(['verified', 'auth'])->group(function () {
         [AttendanceController::class, 'index']
     );
     Route::post('/attendance', [AttendanceController::class, 'attendanceLogic']);
+    Route::get('/search', [AttendanceController::class, 'search']);
+    Route::get('/search/user', [UserInfoController::class, 'index']);
+    Route::get('/search/user/attendance', [UserInfoController::class, 'attendance']);
 });
-
-Route::post('/register', [AuthController::class, 'store']);
-
-Route::get('/search', [AttendanceController::class, 'search']);
 
 Route::get('/login', function () {
     return view('auth.login');
 });
 
-
-Route::get('/search/user', [UserInfoController::class, 'index']);
-
-Route::get('/search/user/attendance', [UserInfoController::class, 'attendance']);
-
-
+Route::post('/register', [AuthController::class, 'store']);
 Route::get('/register', function () {
     return view('auth.register');
 });
 
-
-//メール認証
+//メール認証用
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');

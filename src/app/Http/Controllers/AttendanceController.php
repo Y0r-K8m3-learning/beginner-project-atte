@@ -10,10 +10,16 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Session;
+use App\Services\AttendanceService;
 
 class AttendanceController extends Controller
 {
-    //
+    protected $attendanceService;
+    public function __construct(AttendanceService $attendanceService)
+    {
+        $this->attendanceService = $attendanceService;
+    }
+
     public function search(Request $request)
     {
         //押下ボタン判定
@@ -34,44 +40,8 @@ class AttendanceController extends Controller
         }
         Session::put('search_date', $search_date);
         $search_date = $search_date->toDateString('Y-m-d');
-        $attendances = Attendance::with(['user', 'breaktime'])
-            ->whereDate('work_date', $search_date)->get();
 
-        $sumdata = [];
-
-        foreach ($attendances as $attendance) {
-            $user_name = User::find($attendance['user']->id)['name'];
-            if (isset($attendance->end_time)) {
-                $total_work_time =
-                    gmdate('H:i:s', strtotime($attendance->end_time) - strtotime($attendance->start_time));
-            }
-
-            $breaks = $attendance['breaktime'];
-            $total_break_time = 0;
-            foreach ($breaks as $break) {
-                if (isset($break->end_time)) {
-
-                    $total_break_time = $total_break_time + (strtotime($break->end_time) - strtotime($break->start_time));
-                }
-            }
-
-            $total_break_time = gmdate('H:i:s', $total_break_time);
-            $sumdata[] = [
-                'name' => $user_name,
-                'work_date' => $attendance->work_date,
-                'work_start' => $attendance->start_time,
-                'work_end' => $attendance->end_time,
-                'work_total_time' => $total_work_time,
-                'break_total_time' => $total_break_time,
-            ];
-        }
-
-        //配列からページネーション設定
-
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $page = 5;
-        $currentItems = array_slice($sumdata, ($currentPage - 1) * $page, $page);
-        $sumdata = new LengthAwarePaginator($currentItems, count($sumdata), $page, $currentPage, ['path' => LengthAwarePaginator::resolveCurrentPath()]);
+        $sumdata = $this->attendanceService->getAttendanceSummaryFromDate($search_date);
         return view(
             'search',
             compact('sumdata', 'sumdata'),
@@ -237,8 +207,6 @@ class AttendanceController extends Controller
 
                 ];
             }
-
-
             $break->update($time);
         }
 
