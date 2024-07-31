@@ -40,9 +40,9 @@
 ### Docker環境で実行
 ### ビルドからマイグレーション、シーディングまでを記述する
 - Dockerビルド
-  1. `git clone https://github.com/Y0r-K8m3-learning/beginner-project-atte.git`
-  2. `cd beginner-project-atte`
-  3. `docker-compose up -d --build`
+ 1. `git clone https://github.com/Y0r-K8m3-learning/beginner-project-atte.git`
+ 2. `cd beginner-project-atte`
+ 3. `docker-compose up -d --build`
  
 　※MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて docker-compose.ymlファイルを編集してください。
  
