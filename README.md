@@ -58,7 +58,7 @@
      
 ## その他
   1. OSによっては実行時にログファイル権限エラーが発生します。
- 　- (stream or flie ～ Permission deinied」）エラーが発生する場合は下記コマンドを実行してください。
+ 　- (stream or flie ～ Permission deinied」）エラーが発生する場合は下記コマンドを実行してください。<br>
      `sudo chmod 777 -R storage`
 
  2. .envについて
