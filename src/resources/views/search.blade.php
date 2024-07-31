@@ -46,10 +46,6 @@
             </tr>
             @endforeach
         </table>
-
-
-
-
     </div>
     <div class="search-form-subcontent__pagenation">
         <input class="search_date" name="search_date" content__heading" hidden="{{$search_date}}" readonly>

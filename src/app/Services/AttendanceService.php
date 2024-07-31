@@ -3,12 +3,19 @@
 namespace App\Services;
 
 use App\Models\Attendance;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
 
+//データ取得用
 class AttendanceService
 {
+    public function getAttendanceSummaryFromDate($search_date)
+    {
+        $attendances =
+        Attendance::with(['user', 'breaktime'])
+        ->whereDate('work_date', $search_date)->get();
+        return $this->processAttendances($attendances);
+    }
+
     public function getAttendanceSummaryFromUser($user_id)
     {
         $attendances = Attendance::with(['user', 'breaktime'])

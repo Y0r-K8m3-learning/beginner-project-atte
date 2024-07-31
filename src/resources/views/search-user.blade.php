@@ -46,7 +46,7 @@
     </div>
     <div class="search-form-subcontent__pagenation">
         @if(count($sumdata) > 0)
-        {{ $sumdata->appends(['user_name' => $user_name, 'user_id' => $user_id])->links('vendor.pagination.custom') }}
+        {{ $sumdata->appends(['user_name' => $user_name, 'user_id' => $user_id])->links() }}
         @endif
     </div>
 </div>

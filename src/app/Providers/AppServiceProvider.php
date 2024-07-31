@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Services\AttendanceService;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
