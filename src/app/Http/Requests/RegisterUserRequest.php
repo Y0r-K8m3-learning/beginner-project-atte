@@ -38,6 +38,8 @@ class RegisterUserRequest extends FormRequest
             'email.email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
             'password.required' => 'パスワードを入力してください',
             'password_confirmation.required' => '確認用パスワードを入力してください',
+            'password.confirmed' => '確認用パスワードが一致しません',
+
         ];
     }
 }
